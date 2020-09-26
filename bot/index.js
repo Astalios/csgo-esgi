@@ -2,20 +2,19 @@ require('dotenv').config();
 const discord = require('discord.js');
 const bot = new discord.Client();
 const csgo = require('./csgo.js');
+const prefix = '!csgo';
 
 bot.on('ready', () => {
         console.log('bot logged in !');
 })
 
 bot.on('message', function (msg) {
+        if (!msg.content.startsWith(prefix) || msg.author.bot) return;
 
-        if (msg.content === '!ping') {
-                msg.reply('pong');
-        }
+        const args = msg.content.slice(prefix.length).trim().split(/ +/);
+        const command = args.shift().toLowerCase();
 
-        if (msg.content.indexOf('!csgo') === 0) {
-                msg.reply(csgo.ask(msg.content.split('!csgo ')[1]));
-        }
+        msg.reply(csgo.ask(msg, command, args));
 
 })
 
