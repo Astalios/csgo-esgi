@@ -9,8 +9,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "curl": "^0.1.4",
     "curl-request": "^1.1.1",
-    "discord.js": "^11.5.1",
-    "request": "^2.88.0"
+    "discord.js": "^12.3.1",
+    "dotenv": "^8.2.0",
+    "opusscript": "0.0.7"
   }
 }
