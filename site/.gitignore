@@ -1,0 +1,9 @@
+# Global
+.idea
+.env
+npm-debug.log
+.DS_Store
+
+# Docker
+var/data
+config/nginx/project.conf
